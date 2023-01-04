@@ -33,7 +33,7 @@ resource "aws_instance" "jenkins" {
   vpc_security_group_ids = [ aws_security_group.allow.id ]
 
   tags = {
-    Name = "${var.jenkinsproject}-project"
+    Name = "Jenkins-project"
   }
 }
 
@@ -47,7 +47,7 @@ resource "aws_instance" "docker" {
   vpc_security_group_ids = [ aws_security_group.allow.id ]
 
   tags = {
-    Name = "${var.docker_project}-project"
+    Name = "docker-project"
   }
 }
 
@@ -61,6 +61,6 @@ resource "aws_instance" "ansible" {
   vpc_security_group_ids = [ aws_security_group.allow.id ]
 
   tags = {
-    Name = "${var.ansible_project}-project"
+    Name = "ansible-project"
   }
 }
