@@ -20,7 +20,7 @@ resource "aws_security_group" "allow" {
   }
 
   tags = {
-    Name = "${var.jenkinsproject}-freedom"
+    Name = "security-freedom-new"
   }
 }
 # ec2 instance creating for jenkins project
