@@ -26,7 +26,7 @@ resource "aws_security_group" "allow" {
 # ec2 instance creating for jenkins project
 
 resource "aws_instance" "jenkins" {
-  ami           = data.aws_ami.amazonami.id
+  ami           = data.aws_ami.amzlinux.id
   instance_type = "t2.micro"
   user_data = file("jenkins.sh")
   vpc_security_group_ids = [ aws_security_group.allow.id ]
@@ -39,7 +39,7 @@ resource "aws_instance" "jenkins" {
 # ec2 instance creating for docker project
 
 resource "aws_instance" "docker" {
-  ami           = data.aws_ami.amazonami.id
+  ami           = data.aws_ami.amzlinux.id
   instance_type = "t2.micro"
   user_data = file("docker.sh")
   vpc_security_group_ids = [ aws_security_group.allow.id ]
@@ -52,7 +52,7 @@ resource "aws_instance" "docker" {
 # ec2 instance creating for ansible project
 
 resource "aws_instance" "ansible" {
-  ami           = data.aws_ami.amazonami.id
+  ami           = data.aws_ami.amzlinux.id
   instance_type = "t2.micro"
   user_data = file("ansible.sh")
   vpc_security_group_ids = [ aws_security_group.allow.id ]
