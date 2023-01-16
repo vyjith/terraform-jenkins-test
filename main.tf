@@ -29,7 +29,6 @@ resource "aws_instance" "jenkins" {
   ami           = data.aws_ami.amzlinux.id
   instance_type = "t2.micro"
   key_name = "vyjith-new"
-  user_data = file("jenkins.sh")
   vpc_security_group_ids = [ aws_security_group.allow.id ]
 
   tags = {
